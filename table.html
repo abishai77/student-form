@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<form id="studentForm">
+<div>
+    <h1 class="h1">STUDENT FORM</h1>
+    <table>
+        <tr>
+            <td>NAME</td>
+            <td><input id="name" type="text" name="NAME"></td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td><input id="age" type="number" name="AGE"></td>
+        </tr>
+        <tr>
+            <td> COURSE</td>
+            <td><select id="course" name="COURSE">
+                <option>NOT SELECTED</option>
+                <option>JAVA</option>
+                <option>PYTHON</option>
+                <option>SQL</option>
+                <option>WEB TECH</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>GENDER</td>
+            
+            <td><input type="radio" name="GENDER" value="MALE">MALE
+                <input type="radio" name="GENDER" value="FEMALE" class="FEMALE">FEMALE
+            </td>
+        </tr>
+        <tr>
+            <td>PHONE_NO</td>
+            <td><input id="phone" type="text" name="PHONE_NO"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="button">SUBMIT</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    <h2>Details</h2>
+This student registration form is used to collect student details such as
+name, age, gender, department, email, and contact number.
+Students must enter valid information before submitting the form.
+</p>
+<h3>Course Joining Restrictions</h3>
+
+<ul>
+<li>Students must complete the application form correctly.</li>
+<li>Minimum educational qualification is mandatory.</li>
+<li>Admission depends on seat availability.</li>
+<li>Course fees must be paid before the deadline.</li><li>Students must follow institution rules and discipline.</li>
+<li>Ragging and misconduct are strictly prohibited.</li>
+</ul>
+
+<h3>Conditions</h3>
+
+<ul>
+<li>All fields are mandatory</li>
+<li>Age must be above 18</li>
+<li>Email should be valid</li><li>Phone number must contain 10 digits</li>
+<li>Select only one gender option</li>
+<li>Students must agree to the terms and conditions before submitting.</li>
+<li>Duplicate registrations are not allowed.</li>
+<li>After submission, details cannot be changed.</li>
+</ul>
+</form>
+<script>
+
+document.getElementById("studentForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const data = {
+NAME: document.getElementById("name").value,
+AGE: document.getElementById("age").value,
+COURSE: document.getElementById("course").value,
+GENDER: document.querySelector('input[name="GENDER"]:checked').value,
+PHONE_NO: document.getElementById("phone").value
+};
+
+await fetch("http://localhost:3000/save",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify(data)
+});
+
+alert("Student Data Saved Successfully");
+
+document.getElementById("studentForm").reset();
+
+});
+
+</script>
+</body>
+</html>

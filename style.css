@@ -1,0 +1,49 @@
+    body{
+        background-color: violet;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-y: auto;
+        margin-bottom: 40px;
+    }
+    .h1{
+        color: aliceblue;
+        text-align:center;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px black;
+    }
+    th,td{
+        padding: 8px;
+    }
+    .FEMALE{
+        margin-left: 20px;
+    }
+    table{
+        color:white ;
+        background-color: darkmagenta;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px black;
+    }
+    .button{
+        display: block;
+        margin: auto;
+    }
+    p{
+        font-family: 'Times New Roman', Times, serif ;
+        font-size: 28px;
+        margin-top: auto;
+        color: black;
+    }
+    ul{
+        width: 80%;
+        font-size: medium;
+        line-height: normal;
+        text-align: justify;
+        margin-top: auto;
+        color: black;
+    }
