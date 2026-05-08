@@ -42,8 +42,12 @@ Express server receives the data using POST request.
 MongoDB client connects to the database.
 Data is inserted into the students collection.
 MongoDB Database
+
 Database Name:
+
 studentdb
 Collection Name:
+
 students
+
 Abishai V
